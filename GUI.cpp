@@ -10,8 +10,8 @@ GUI::GUI(sf::RenderWindow* windowPtr)
 	initialHeight = 768;
 	windowTitle = "Spreadsheet Program";
 	window->create(sf::VideoMode(initialWidth, initialHeight), windowTitle);
-
-	topMenuBar;
+	topMenuBar.window = window;
+	topRibbon.window = window;
 
 }
 
@@ -30,13 +30,31 @@ void GUI::MainLoop()
 {
 	int FPS(60);
 	window->setFramerateLimit(FPS);
+	topMenuBar.Setup();
+	topRibbon.Setup();
+
+
+
+	//sf::RoundedRectangleShape rectangle;
+	// rectangle.setSize(sf::Vector2f(100, 50));
+	// rectangle.setCornersRadius(5);
+	// rectangle.setCornerPointCount(10);
+	// rectangle.setOutlineThickness(5);
+	// rectangle.setPosition(100, 200);
+	// rectangle.setFillColor(sf::Color(255, 255, 255));
+	// window->draw(rectangle);
+
+	
+
+
+
 
 	sf::Event e;
 
 	while (window->isOpen())
 	{
 
-		window->clear();
+		window->clear(sf::Color(240,240,240));
 
 		while (window->pollEvent(e))
 		{
@@ -47,11 +65,16 @@ void GUI::MainLoop()
 			if (e.type == sf::Event::Resized)
 			{
 				window->setView(sf::View(sf::FloatRect(0, 0, e.size.width, e.size.height)));
+				topMenuBar.Resize();
+				topRibbon.Resize();
 			}
 
 		}
 
-		topMenuBar.Draw(window);
+		//window->draw(rectangle);
+
+		topMenuBar.Draw();
+		topRibbon.Draw();
 		window->display();
 
 	}

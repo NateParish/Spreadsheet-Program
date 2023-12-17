@@ -27,6 +27,9 @@
     <ClCompile Include="ribbon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="RoundedRectangleShape.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GUI.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ribbon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RoundedRectangleShape.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

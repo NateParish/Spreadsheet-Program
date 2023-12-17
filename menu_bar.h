@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include "SFML/Graphics.hpp"
 
 class MenuBar
@@ -9,7 +10,10 @@ public:
 
 	int x;
 	int y;
+	int width;
+	int height;
 
+	sf::RenderWindow* window;
 	sf::RectangleShape bgRect;
 	sf::Color bgRectColor;
 
@@ -17,7 +21,9 @@ public:
 	MenuBar();
 	~MenuBar();	
 
-	void Draw(sf::RenderWindow* window);
+	void Setup();
+	void Resize();
+	void Draw();
 
 
 };

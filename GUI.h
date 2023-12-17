@@ -4,6 +4,7 @@
 #include "SFML/Graphics.hpp"
 #include "menu_bar.h"
 #include "ribbon.h"
+#include "RoundedRectangleShape.h"
 
 class GUI
 {
@@ -18,6 +19,7 @@ class GUI
 		std::string windowTitle;
 
 		MenuBar topMenuBar;
+		Ribbon topRibbon;
 
 		GUI(sf::RenderWindow* windowPtr);
 		~GUI();

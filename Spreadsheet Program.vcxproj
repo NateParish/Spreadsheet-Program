@@ -143,11 +143,13 @@
     <ClCompile Include="menu_bar.cpp" />
     <ClCompile Include="ribbon.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="RoundedRectangleShape.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GUI.h" />
     <ClInclude Include="menu_bar.h" />
     <ClInclude Include="ribbon.h" />
+    <ClInclude Include="RoundedRectangleShape.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
