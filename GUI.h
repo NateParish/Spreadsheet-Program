@@ -1,9 +1,11 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <vector>
 #include "SFML/Graphics.hpp"
 #include "menu_bar.h"
 #include "ribbon.h"
+#include "button.h"
 #include "RoundedRectangleShape.h"
 
 class GUI
@@ -20,6 +22,8 @@ class GUI
 
 		MenuBar topMenuBar;
 		Ribbon topRibbon;
+		Button button1;
+
 
 		GUI(sf::RenderWindow* windowPtr);
 		~GUI();
@@ -32,6 +36,7 @@ class GUI
 
 
 	private:
+		bool updateCursor;
 
 
 		

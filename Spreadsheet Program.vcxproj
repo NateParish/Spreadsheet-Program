@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="button.cpp" />
     <ClCompile Include="GUI.cpp" />
     <ClCompile Include="menu_bar.cpp" />
     <ClCompile Include="ribbon.cpp" />
@@ -146,6 +147,7 @@
     <ClCompile Include="RoundedRectangleShape.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="button.h" />
     <ClInclude Include="GUI.h" />
     <ClInclude Include="menu_bar.h" />
     <ClInclude Include="ribbon.h" />

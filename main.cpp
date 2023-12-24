@@ -6,6 +6,7 @@ int main()
 {
 
 
+
 	sf::RenderWindow window;
 	sf::RenderWindow* windowPtr(&window);
 

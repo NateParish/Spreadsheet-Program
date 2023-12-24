@@ -1,4 +1,5 @@
 #include "ribbon.h"
+#include "SFML/Graphics.hpp"
 
 
 Ribbon::Ribbon()

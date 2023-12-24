@@ -28,7 +28,7 @@ MenuBar::~MenuBar()
 void MenuBar::Setup()
 {
 	width = window->getSize().x;
-	std::cout << width << std::endl;
+	//std::cout << width << std::endl;
 	bgRect.setFillColor(bgRectColor);
 	bgRect.setSize(sf::Vector2f(width, height));
 	bgRect.setPosition(sf::Vector2f(x, y));
