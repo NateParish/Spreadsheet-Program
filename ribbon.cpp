@@ -40,6 +40,8 @@ void Ribbon::Setup()
 	shadingRect.setPosition(x, y + shadingThickness);
 	//bgRect.setFillColor(sf::Color(bgRectColor.r, bgRectColor.g, bgRectColor.b));
 
+	
+
 }
 
 void Ribbon::Resize()
@@ -52,7 +54,8 @@ void Ribbon::Resize()
 
 void Ribbon::Draw()
 {
-	
+
 	window->draw(shadingRect);
 	window->draw(bgRect);
+
 }

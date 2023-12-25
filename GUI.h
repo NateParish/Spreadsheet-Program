@@ -6,6 +6,7 @@
 #include "menu_bar.h"
 #include "ribbon.h"
 #include "button.h"
+#include "cell.h"
 #include "RoundedRectangleShape.h"
 
 class GUI
@@ -22,7 +23,9 @@ class GUI
 
 		MenuBar topMenuBar;
 		Ribbon topRibbon;
-		Button button1;
+		Button boldButton;
+		Button italicButton;
+		Button underlineButton;
 
 
 		GUI(sf::RenderWindow* windowPtr);

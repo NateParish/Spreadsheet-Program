@@ -12,7 +12,9 @@ GUI::GUI(sf::RenderWindow* windowPtr)
 	window->create(sf::VideoMode(initialWidth, initialHeight), windowTitle);
 	topMenuBar.window = window;
 	topRibbon.window = window;
-	button1.window = window;
+	boldButton.window = window;
+	italicButton.window = window;
+	underlineButton.window = window;
 	updateCursor = false;
 
 }
@@ -50,11 +52,37 @@ void GUI::MainLoop()
 	window->setFramerateLimit(FPS);
 	topMenuBar.Setup();
 	topRibbon.Setup();
-	button1.Setup();
+
+	boldButton.Setup();
+	boldButton.SetSize(20, 20);
+	boldButton.SetText("B");
+	boldButton.MakeTextBold();
+	boldButton.SetPosition(100, 100);
+
+	italicButton.Setup();
+	italicButton.SetSize(20, 20);
+	italicButton.SetText("I");
+	italicButton.MakeTextItalic();
+	italicButton.SetPosition(125, 100);
+
+	underlineButton.Setup();
+	underlineButton.SetSize(20, 20);
+	underlineButton.SetText("U");
+	underlineButton.UnderlineText();
+	underlineButton.SetPosition(150, 100);
 
 
 	std::vector<Button*> listOfButtons;
-	listOfButtons.push_back(&button1);
+	listOfButtons.push_back(&boldButton);
+	listOfButtons.push_back(&italicButton);
+	listOfButtons.push_back(&underlineButton);
+
+	Cell testCell;
+	testCell.window = window;
+	testCell.Setup();
+	std::vector<Cell*> listOfCells;
+	listOfCells.push_back(&testCell);
+
 
 
 
@@ -90,39 +118,48 @@ void GUI::MainLoop()
 		for (Button* button : listOfButtons)
 		{
 			setCursorToHand = button->Highlight();
-			if(setCursorToHand == true)
+			if(setCursorToHand)
 			{
 				updateCursor = true;
-				//std::cout << "updateCursor 1 : " << updateCursor << std::endl;
 			}
-			button->Draw();
 		}
 
-		if (updateCursor == true)
+		if (updateCursor)
 		{
-			if (setCursorToHand == true)
+			if (setCursorToHand)
 			{
 				window->setMouseCursor(handCursor);
 				setCursorToArrow = false;
 			}
-			if (setCursorToArrowWait == true)
+			if (setCursorToArrowWait)
 			{
 				window->setMouseCursor(arrowWaitCursor);
 				setCursorToArrow = false;
 			}
-			if (setCursorToArrow == true)
+			if (setCursorToArrow)
 			{
 				window->setMouseCursor(arrowCursor);
 			}
 
-			std::cout << "updateCursor 1 : " << updateCursor << std::endl;
+			//std::cout << "updateCursor 1 : " << updateCursor << std::endl;
 			updateCursor = false;
-			std::cout << "updateCursor 1 : " << updateCursor << std::endl;
+			//std::cout << "updateCursor 1 : " << updateCursor << std::endl;
 
 		}
+		else
+		{
+			window->setMouseCursor(arrowCursor);
+		}
 
+		testCell.Draw();
 		topMenuBar.Draw();
 		topRibbon.Draw();
+
+		for (Button* button : listOfButtons)
+		{
+			button->Draw();
+		}
+
 		window->display();
 
 	}

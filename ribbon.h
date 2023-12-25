@@ -1,6 +1,7 @@
 #pragma once
 #include "SFML/Graphics.hpp"
 #include "RoundedRectangleShape.h"
+#include "button.h"
 
 class Ribbon
 {
@@ -17,6 +18,8 @@ public:
 	sf::RoundedRectangleShape bgRect;
 	sf::RoundedRectangleShape shadingRect;
 	sf::Color bgRectColor;
+
+	std::vector <Button*> buttonList;
 
 
 	Ribbon();
